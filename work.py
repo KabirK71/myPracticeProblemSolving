@@ -6,17 +6,20 @@ def factorial(num):
     return fact
 
 # Function to calculate the combination (nCm)
+
+
 def calculate_combination(n, m):
     if n < m:
-        return 0 # Invalid combination
+        return 0  # Invalid combination
     numerator = factorial(n)
     denominator = factorial(m) * factorial(n - m)
     combination = numerator // denominator
     return combination
 
-s = input();
+
+s = input()
 s = s[0:3]
-n,m = s.split(" ")
+n, m = s.split(" ")
 n = int(n)
 m = int(m)
 l1 = []
@@ -27,7 +30,7 @@ for i in range(m):
 
 for i in l1:
     i = i[0:3]
-    l,k = i.split(" ")
+    l, k = i.split(" ")
     if l not in l2:
         l2.append(l)
     if k not in l2:
@@ -37,7 +40,3 @@ secure = m
 insecure = calculate_combination(len(l2), 2) - m
 
 print(str(insecure) + " " + str(secure))
-        
-    
-
-
